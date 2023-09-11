@@ -1,5 +1,5 @@
 import React from "react";
-import loading from "../loading.gif";
+import loading from "/images/loading.gif";
 const Spinner = () => {
   const containerStyle = {
     minHeight: "100vh", // Set minimum height to full viewport height

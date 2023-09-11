@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Icons from "../news.png";
+import Icons from "/images/news.png";
 import "./NewsItem.css";
 import { APIContext } from "../context/APIContextProvider";
 
@@ -19,10 +19,24 @@ const NaveBar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <img src={Icons} alt="icon" className="navebar-icon" />
+          <Link
+            className="navbar-brand"
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+            to="/"
+          >
+            <img
+              src={Icons}
+              alt="icon"
+              width={20}
+              height={20}
+              style={{ marginRight: "4px" }}
+              className="navebar-icon"
+            />
 
-            <span className="navbar-name">InfoGlobe</span>
+            <div className="navbar-name">InfoGlobe</div>
           </Link>
           <button
             className="navbar-toggler"
