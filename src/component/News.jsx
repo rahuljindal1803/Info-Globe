@@ -75,7 +75,7 @@ const News = (props) => {
         {!loading &&
           articles?.map((element) => {
             return (
-              <div className="col-lg-3" key={element.url}>
+              <div className="col-lg-3 col-md-4 col-sm-6" key={element.url}>
                 <NewsItem
                   title={element.title ? element.title.slice(0, 100) : ""}
                   description={

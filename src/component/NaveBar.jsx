@@ -89,14 +89,17 @@ const NaveBar = () => {
               </li>
             </ul>
             <select
-              className="select-country form-select form-select-sm select-country"
+              className="select-country form-select form-select-sm "
               aria-label="Small select example"
               onChange={handleOptionChange}
               value={selectedOption}
             >
-              <option value="in">in</option>
-              <option value="us">us</option>
-              <option value="mx">mx</option>
+              <option value="in">India</option>
+              <option value="us">United States</option>
+              <option value="mx">Mexico</option>
+              <option value="ar">Argentina</option>
+              <option value="ca">Canada</option>
+              <option value="cn">China</option>
             </select>
           </div>
         </div>

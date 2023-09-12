@@ -1,51 +1,89 @@
 /* NewsItem.css */
 .card-text {
   background-color: #ffe8e8;
+  border-radius: 10px;
 }
 
 .card {
-  max-width: 124rem; /* Adjust the max-width to make the card wider */
+  width: 300px;
   border-radius: 20px;
+  margin: 10px;
+  margin-bottom: 20px;
+  /* padding: 10px; */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
 .responsive-image {
   max-width: 100%;
-  height: 200px;
+  height: auto;
   margin: 10px;
   border-radius: 5%;
 }
 
+.image-placeholder {
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+/* 
 @media (max-width: 768px) {
   .card {
-    width: 100%; /* Make the card width 100% on smaller screens */
+    width: 100%; /* Make the card width 100% on smaller screens 
   }
-}
+}*/
 
-/* Media query for screens smaller than 576px (typical phone) */
-@media (max-width: 576px) {
-  .card {
-    width: 100%; /* Make the card width 100% on even smaller screens */
-  }
-  .responsive-image {
-    /* Adjust image styles for smaller screens */
-    max-width: 100%;
-    height: auto; /* Ensure the image maintains its aspect ratio */
-  }
-}
-.text-center {
+*/ .text-center {
   font-family: Helvetica Neue;
 }
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 .card-button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .navbar-icon {
   margin-right: 100px;
 }
 
 .select-country {
-  width: 200px;
-  margin-left: 10pz;
+  padding: 5;
+  font-size: 10;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 130px;
+  margin-left: 10px;
   display: inline-block;
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-large {
+    width: 25rem;
+  }
+  .select-country-large {
+    width: 300px;
+  }
 }
