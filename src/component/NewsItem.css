@@ -2,6 +2,8 @@
 .card-text {
   background-color: #ffe8e8;
   border-radius: 10px;
+  margin: 1px;
+  padding: 5px;
 }
 
 .card {
@@ -86,4 +88,8 @@
   .select-country-large {
     width: 300px;
   }
+}
+
+.start-100 {
+  left: 85% !important;
 }

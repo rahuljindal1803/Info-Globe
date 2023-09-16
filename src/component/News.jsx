@@ -83,6 +83,9 @@ const News = (props) => {
                   }
                   imgUrl={element.urlToImage}
                   url={element.url}
+                  author={element.author}
+                  Date={new Date(element.publishedAt).toGMTString()}
+                  source={element.source.name}
                 />
               </div>
             );
