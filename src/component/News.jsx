@@ -15,6 +15,7 @@ const News = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      props.setProgress(10);
       let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${props.category}&apiKey=${API_KEY}&page=1&pageSize=${props.pageSize}`;
 
       setLoading(true);
@@ -25,17 +26,23 @@ const News = (props) => {
       setTotalResults(data.totalResults);
       setLoading(false);
     };
+    props.setProgress(30);
 
     fetchData();
+    props.setProgress(70);
 
     window.scrollTo({ top: 0, behavior: "smooth" });
+    props.setProgress(100);
   }, [country]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    props.setProgress(100);
   }, [page]);
 
   const handlePrev = async () => {
+    props.setProgress(10);
+
     let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${
       props.category
     }&apiKey=${API_KEY}&page=${page - 1}&pagesize=${props.pageSize}`;
@@ -50,18 +57,24 @@ const News = (props) => {
   };
 
   const handleNext = async () => {
+    props.setProgress(10);
+
     if (!(page + 1 > Math.ceil(totalResults / props.pageSize))) {
       let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${
         props.category
       }&apiKey=${API_KEY}&page=${page + 1}&pagesize=${props.pageSize}`;
 
       setLoading(true);
+      try {
+        let data = await (await fetch(url)).json();
 
-      let data = await (await fetch(url)).json();
-
-      setArticles(data.articles);
-      setPage(page + 1);
-      setLoading(false);
+        setArticles(data.articles);
+        setPage(page + 1);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -71,7 +84,7 @@ const News = (props) => {
 
       {loading && <Spinner />}
 
-      <div className="row">
+      <div className="row" style={{ marginRight: "3px" }}>
         {!loading &&
           articles?.map((element) => {
             return (

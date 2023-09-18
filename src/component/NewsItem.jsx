@@ -13,15 +13,15 @@ const NewsItem = ({
   return (
     <div>
       <div
-        className="card my-4"
-        style={{ width: "20rem", borderRadius: "20px" }}
+        className="card my-4 ms-2"
+        style={{ width: "100%", borderRadius: "20px" }}
       >
         <span
-          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-white text-dark "
+          className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-white text-dark "
           style={{ left: "80%", zIndex: "1" }}
         >
           {source}
-          <span class="visually-hidden">unread messages</span>
+          <span className="visually-hidden">unread messages</span>
         </span>
         <img
           className="responsive-image image-placeholder"
